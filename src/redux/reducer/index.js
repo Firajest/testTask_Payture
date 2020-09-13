@@ -1,6 +1,5 @@
 import { ADD_PAYMENT } from '../actionTypes';
 
-// const initialState = [];
 const initialState = {
   // order: '',
   // createdAt: '',

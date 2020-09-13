@@ -16,7 +16,6 @@ const store = createStore(
 );
 store.subscribe(() => {
   saveState({
-    // payments: store.getState(),
     allPayments: store.getState().allPayments,
   });
 });
