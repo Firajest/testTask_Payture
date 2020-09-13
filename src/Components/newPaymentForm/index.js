@@ -38,7 +38,7 @@ function NewPaymentForm() {
       </FormGroup>
       <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
         <Label for="cardNumber" className="mr-sm-2">Сумма заказа</Label>
-        <Input type="text" name="cardNumber" id="cardNumber" placeholder="№ карты" value={cardNumber} onChange={handleChange} />
+        <Input type="text" name="cardNumber" id="cardNumber" placeholder="№ карты" value={cardNumber} onChange={handleChange} pattern="\d{16}" />
       </FormGroup>
       <Button>Submit</Button>
     </Form>
