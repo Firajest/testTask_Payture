@@ -8,16 +8,28 @@ const initialState = {
   // cardNumber: '',
   allPayments: [],
 };
-
-export default function UserProps(state = initialState, action) {
+function maskCard(string) {
+  const firstPart = string.slice(0, 1);
+  const lastPart = string.slice(-1);
+  const mask = string.slice(1, string.length - 1);
+  let middlePart = '';
+  for (let i = 0; i < mask.length; i += 1) {
+    middlePart += mask[i].replace(`${mask[i]}`, 'x');
+  }
+  return firstPart + middlePart + lastPart;
+}
+export default function Payments(state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
     case ADD_PAYMENT: {
+      const dateOptions = {
+        year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric',
+      };
       const newPayment = {
         order: payload.order,
-        createdAt: (new Date()).toLocaleDateString(),
+        createdAt: (new Date()).toLocaleTimeString('ru', dateOptions),
         amount: payload.amount,
-        cardNumber: payload.cardNumber,
+        cardNumber: maskCard(payload.cardNumber),
       };
       let newAllPayments;
       if (state.allPayments !== undefined) {

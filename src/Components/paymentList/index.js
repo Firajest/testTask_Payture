@@ -5,10 +5,7 @@ import './paymentList.css';
 
 function PaymentList() {
   return (
-    <ul>
-      <li>№ заказа | дата операции | сумма | № карты</li>
-      <Payments />
-    </ul>
+    <Payments />
   );
 }
 

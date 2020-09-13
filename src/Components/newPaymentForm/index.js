@@ -22,15 +22,15 @@ function NewPaymentForm() {
   function handleSubmit(event) {
     event.preventDefault();
     // console.log(event.target.order.value, event.target.amount.value, event.target.cardNumber.value);
-    
+
     dispatch(addPayment(event.target.order.value, event.target.amount.value, event.target.cardNumber.value));
   }
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" placeholder="№ заказа" name="order" value={order} onChange={handleChange} />
-      <input type="text" placeholder="Сумма заказа" name="amount" value={amount} onChange={handleChange} />
-      <input type="text" placeholder="№ карты" name="cardNumber" value={cardNumber} onChange={handleChange} />
+      <input type="text" placeholder="№ заказа" name="order" value={order} onChange={handleChange} required/>
+      <input type="text" placeholder="Сумма заказа" name="amount" value={amount} onChange={handleChange} required/>
+      <input type="text" placeholder="№ карты" name="cardNumber" value={cardNumber} onChange={handleChange} pattern="\d{16}" />
       <input type="submit" value="Добавить" />
     </form>
   );

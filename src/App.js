@@ -2,6 +2,7 @@
 import React from 'react';
 import PaymentList from './Components/paymentList';
 import NewPaymentForm from './Components/newPaymentForm';
+import './App.css';
 
 function App() {
   return (
@@ -9,10 +10,11 @@ function App() {
       <header className="App-header">
         <NewPaymentForm />
       </header>
+      <br />
       <div className="ListContainer">
         <PaymentList />
       </div>
-      
+
     </div>
   );
 }
