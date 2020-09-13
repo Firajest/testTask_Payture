@@ -30,11 +30,11 @@ function NewPaymentForm() {
     <Form inline onSubmit={handleSubmit}>
       <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
         <Label for="order" className="mr-sm-2">№ заказа</Label>
-        <Input type="text" name="order" id="order" placeholder="№ заказа" value={order} onChange={handleChange} />
+        <Input type="text" name="order" id="order" placeholder="№ заказа" value={order} onChange={handleChange} required />
       </FormGroup>
       <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
         <Label for="amount" className="mr-sm-2">Сумма заказа</Label>
-        <Input type="text" name="amount" id="amount" placeholder="Сумма заказа" value={amount} onChange={handleChange} />
+        <Input type="text" name="amount" id="amount" placeholder="Сумма заказа" value={amount} onChange={handleChange} required />
       </FormGroup>
       <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
         <Label for="cardNumber" className="mr-sm-2">Сумма заказа</Label>
